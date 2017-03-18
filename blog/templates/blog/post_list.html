@@ -1,21 +1,23 @@
+{% load staticfiles %}
 <html>
     <head>
         <title>Le blog de Johanna</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
-    <body>
+    <body> 
         <div>
             <h1><a href="">Blog de Johanna</a></h1>
         </div>
 		
-	{% for post in posts %}
-		<div>
-			<p>publié: {{ post.published_date }}</p>
-			<h1><a href="">{{ post.title }}</a></h1>
-			<p>{{ post.text|linebreaksbr }}</p>
-				{{ post }}
-	    </div>
-	{% endfor %}
-		
-       
+		{% for post in posts %}
+			<div>
+				<p>publié: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+					{{ post }}
+			</div>
+		{% endfor %}      
     </body>
 </html>
